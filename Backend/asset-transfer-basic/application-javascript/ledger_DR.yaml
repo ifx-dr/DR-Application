@@ -10,6 +10,7 @@ OntologyInfo:
     - Power
     - Sensor
     - Semi-conductor Development
+    - Sustainability
     - System
     - Process
     - Wired Communication
@@ -58,27 +59,28 @@ UserInfo:
     Name: Marta
     Password: '333'
     Email: 333@gmail.com
-    Tokens: 1020
+    Tokens: 990
     Total_Proposal: 0
     Total_Accepted_Proposal: 0
-    LastParticipation: 9.3.2023, 11:02:02 (CET)
-    LastParticipation_Internal: Thu Mar 09 2023 10:02:02 GMT+0000 (Coordinated Universal Time)
+    LastParticipation: 30.6.2023, 13:55:54 (CET)
+    LastParticipation_Internal: Fri Jun 30 2023 11:55:54 GMT+0000 (Coordinated Universal Time)
     LobeOwner:
       - System
       - Process
       - Wired Communication
       - Cloud
       - Battery Management System
+      - Sustainability
     Expert: []
   - ID: member4
     Name: Yipeng
     Password: '444'
     Email: 444@gmail.com
     Tokens: 980
-    Total_Proposal: 1
-    Total_Accepted_Proposal: 1
-    LastParticipation: 12.5.2023, 16:01:30 (CET)
-    LastParticipation_Internal: Fri May 12 2023 14:01:30 GMT+0000 (Coordinated Universal Time)
+    Total_Proposal: 2
+    Total_Accepted_Proposal: 2
+    LastParticipation: 30.6.2023, 12:37:55 (CET)
+    LastParticipation_Internal: Fri Jun 30 2023 10:37:55 GMT+0000 (Coordinated Universal Time)
     LobeOwner: []
     Expert: []
 OngoingProposalInfo: []
@@ -115,12 +117,25 @@ ClosedProposalInfo:
     Author: member4
     Domain: Supply Chain
     LobeOwner: member1
+  - ID: proposal3
+    State: accept by lobe owner
+    StartDate: 30.6.2023, 12:37:55 (CET)
+    StartDate_Internal: Fri Jun 30 2023 10:37:55 GMT+0000 (Coordinated Universal Time)
+    EndDate: 30.6.2023, 13:55:56 (CET)
+    EndDate_Internal: Fri Jun 30 2023 11:55:56 GMT+0000 (Coordinated Universal Time)
+    Veto: false
+    URI: >-
+      https://github.com/tibonto/dr/commit/49822f5ba69988dc48650588cb0f5aa30ddb1fe1
+    Message: IRIs aligned for Sustainability Lobe - BMS, CO2 ontologies
+    Author: member4
+    Domain: Sustainability
+    LobeOwner: member3
 NewBlockRequest:
   newBlockWaiting: 'false'
   proposalID: n/a
   author: n/a
   lobeOwner: n/a
   supervisor: n/a
-LatestDR: https://github.com/tibonto/dr/commit/39bc5ee3b8e4774e66bfc7e7150ccfbdc30223a7
+LatestDR: https://github.com/tibonto/dr/commit/49822f5ba69988dc48650588cb0f5aa30ddb1fe1
 FileHash: >-
-  https://github.com/tibonto/dr/archive/39bc5ee3b8e4774e66bfc7e7150ccfbdc30223a7.zip
+  https://github.com/tibonto/dr/archive/49822f5ba69988dc48650588cb0f5aa30ddb1fe1.zip
