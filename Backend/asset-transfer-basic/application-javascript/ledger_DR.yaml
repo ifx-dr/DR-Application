@@ -59,11 +59,11 @@ UserInfo:
     Name: Marta
     Password: '333'
     Email: 333@gmail.com
-    Tokens: 990
+    Tokens: 1000
     Total_Proposal: 0
     Total_Accepted_Proposal: 0
-    LastParticipation: 30.6.2023, 13:55:54 (CET)
-    LastParticipation_Internal: Fri Jun 30 2023 11:55:54 GMT+0000 (Coordinated Universal Time)
+    LastParticipation: 5.7.2023, 15:31:50 (CET)
+    LastParticipation_Internal: Wed Jul 05 2023 13:31:50 GMT+0000 (Coordinated Universal Time)
     LobeOwner:
       - System
       - Process
@@ -76,11 +76,11 @@ UserInfo:
     Name: Yipeng
     Password: '444'
     Email: 444@gmail.com
-    Tokens: 980
-    Total_Proposal: 2
-    Total_Accepted_Proposal: 2
-    LastParticipation: 30.6.2023, 12:37:55 (CET)
-    LastParticipation_Internal: Fri Jun 30 2023 10:37:55 GMT+0000 (Coordinated Universal Time)
+    Tokens: 990
+    Total_Proposal: 3
+    Total_Accepted_Proposal: 3
+    LastParticipation: 5.7.2023, 13:14:01 (CET)
+    LastParticipation_Internal: Wed Jul 05 2023 11:14:01 GMT+0000 (Coordinated Universal Time)
     LobeOwner: []
     Expert: []
 OngoingProposalInfo: []
@@ -130,12 +130,25 @@ ClosedProposalInfo:
     Author: member4
     Domain: Sustainability
     LobeOwner: member3
+  - ID: proposal4
+    State: accept by lobe owner
+    StartDate: 5.7.2023, 13:14:01 (CET)
+    StartDate_Internal: Wed Jul 05 2023 11:14:01 GMT+0000 (Coordinated Universal Time)
+    EndDate: 5.7.2023, 15:31:52 (CET)
+    EndDate_Internal: Wed Jul 05 2023 13:31:52 GMT+0000 (Coordinated Universal Time)
+    Veto: false
+    URI: >-
+      https://github.com/tibonto/dr/commit/3d807c9bd4e9b09ca7d8a0760c7902aa75201c97
+    Message: Definition update in CO2SavingsElectriccar
+    Author: member4
+    Domain: Sustainability
+    LobeOwner: member3
 NewBlockRequest:
   newBlockWaiting: 'false'
   proposalID: n/a
   author: n/a
   lobeOwner: n/a
   supervisor: n/a
-LatestDR: https://github.com/tibonto/dr/commit/49822f5ba69988dc48650588cb0f5aa30ddb1fe1
+LatestDR: https://github.com/tibonto/dr/commit/37f44bcd00cbfa026b01bdd665fe384881f5744f
 FileHash: >-
-  https://github.com/tibonto/dr/archive/49822f5ba69988dc48650588cb0f5aa30ddb1fe1.zip
+  https://github.com/tibonto/dr/archive/37f44bcd00cbfa026b01bdd665fe384881f5744f.zip
