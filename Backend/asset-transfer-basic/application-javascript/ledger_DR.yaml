@@ -59,11 +59,11 @@ UserInfo:
     Name: Marta
     Password: '333'
     Email: 333@gmail.com
-    Tokens: 1000
+    Tokens: 1010
     Total_Proposal: 0
     Total_Accepted_Proposal: 0
-    LastParticipation: 5.7.2023, 15:31:50 (CET)
-    LastParticipation_Internal: Wed Jul 05 2023 13:31:50 GMT+0000 (Coordinated Universal Time)
+    LastParticipation: 17.7.2023, 13:40:22 (CET)
+    LastParticipation_Internal: Mon Jul 17 2023 11:40:22 GMT+0000 (Coordinated Universal Time)
     LobeOwner:
       - System
       - Process
@@ -76,11 +76,11 @@ UserInfo:
     Name: Yipeng
     Password: '444'
     Email: 444@gmail.com
-    Tokens: 990
-    Total_Proposal: 3
-    Total_Accepted_Proposal: 3
-    LastParticipation: 5.7.2023, 13:14:01 (CET)
-    LastParticipation_Internal: Wed Jul 05 2023 11:14:01 GMT+0000 (Coordinated Universal Time)
+    Tokens: 1000
+    Total_Proposal: 4
+    Total_Accepted_Proposal: 4
+    LastParticipation: 17.7.2023, 12:16:10 (CET)
+    LastParticipation_Internal: Mon Jul 17 2023 10:16:10 GMT+0000 (Coordinated Universal Time)
     LobeOwner: []
     Expert: []
 OngoingProposalInfo: []
@@ -143,12 +143,25 @@ ClosedProposalInfo:
     Author: member4
     Domain: Sustainability
     LobeOwner: member3
+  - ID: proposal5
+    State: accept by lobe owner
+    StartDate: 17.7.2023, 12:16:10 (CET)
+    StartDate_Internal: Mon Jul 17 2023 10:16:10 GMT+0000 (Coordinated Universal Time)
+    EndDate: 17.7.2023, 13:40:24 (CET)
+    EndDate_Internal: Mon Jul 17 2023 11:40:24 GMT+0000 (Coordinated Universal Time)
+    Veto: false
+    URI: >-
+      https://github.com/tibonto/dr/commit/e6d10f8125f8d72ce35d8b91448a3311787bd30e
+    Message: Merge conflict resolution
+    Author: member4
+    Domain: Sustainability
+    LobeOwner: member3
 NewBlockRequest:
   newBlockWaiting: 'false'
   proposalID: n/a
   author: n/a
   lobeOwner: n/a
   supervisor: n/a
-LatestDR: https://github.com/tibonto/dr/commit/37f44bcd00cbfa026b01bdd665fe384881f5744f
+LatestDR: https://github.com/tibonto/dr/commit/e6d10f8125f8d72ce35d8b91448a3311787bd30e
 FileHash: >-
-  https://github.com/tibonto/dr/archive/37f44bcd00cbfa026b01bdd665fe384881f5744f.zip
+  https://github.com/tibonto/dr/archive/e6d10f8125f8d72ce35d8b91448a3311787bd30e.zip
