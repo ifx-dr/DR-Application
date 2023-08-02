@@ -1,0 +1,167 @@
+OntologyInfo:
+  Name: DigitalReference.ttl
+  Domains:
+    - Planning
+    - Time
+    - Supply Chain
+    - Organisation
+    - Semiconductor Production
+    - Product
+    - Power
+    - Sensor
+    - Semi-conductor Development
+    - Sustainability
+    - System
+    - Process
+    - Wired Communication
+    - Cloud
+    - Battery Management System
+  Repo: tibonto/dr
+  Default: master
+  Platform: GitHub
+  AccessToken: n/a
+BlockchainInfo:
+  FileName: ./historic/hist_DR.xlsx
+  OutFileName: ./historic/hist_DR.xlsx
+UserInfo:
+  - ID: member1
+    Name: Hans
+    Password: $2a$10$ACUrWng8gxA5zRkzFbLenO4HJYAFVQrCVMCT8uItLQAXaZMt/t72.
+    Email: 111@gmail.com
+    Tokens: 990
+    Total_Proposal: 0
+    Total_Accepted_Proposal: 0
+    LastParticipation: 15.5.2023, 14:26:50 (CET)
+    LastParticipation_Internal: Mon May 15 2023 12:26:50 GMT+0000 (Coordinated Universal Time)
+    LobeOwner:
+      - Planning
+      - Time
+      - Supply Chain
+      - Organisation
+      - Semiconductor Production
+    Expert: []
+  - ID: member2
+    Name: Philipp
+    Password: $2a$10$L0UIHg5190t2UV7l6tDGs.d8EQTBt6CSbY3B2vqlNQ7HurQaTNTV2
+    Email: 222@gmail.com
+    Tokens: 1000
+    Total_Proposal: 0
+    Total_Accepted_Proposal: 0
+    LastParticipation: 23.1.2023, 01:00:00 (CET)
+    LastParticipation_Internal: Mon Jan 23 2023 00:00:00 GMT+0000 (Coordinated Universal Time)
+    LobeOwner:
+      - Product
+      - Power
+      - Sensor
+      - Semi-conductor Development
+    Expert: []
+  - ID: member3
+    Name: Marta
+    Password: $2a$10$xoQ7KVuImugsPMurdu/BmOtpfrFvict7gcVz/PNdHpBZg8YVGJR1y
+    Email: 333@gmail.com
+    Tokens: 1010
+    Total_Proposal: 0
+    Total_Accepted_Proposal: 0
+    LastParticipation: 17.7.2023, 13:40:22 (CET)
+    LastParticipation_Internal: Mon Jul 17 2023 11:40:22 GMT+0000 (Coordinated Universal Time)
+    LobeOwner:
+      - System
+      - Process
+      - Wired Communication
+      - Cloud
+      - Battery Management System
+      - Sustainability
+    Expert: []
+  - ID: member4
+    Name: Yipeng
+    Password: $2a$10$VvGZeqv6JHgnkRx0hipYQOY8GnNz/xl3Jeng4DzBLhLxurmHLpwla
+    Email: 444@gmail.com
+    Tokens: 1000
+    Total_Proposal: 4
+    Total_Accepted_Proposal: 4
+    LastParticipation: 17.7.2023, 12:16:10 (CET)
+    LastParticipation_Internal: Mon Jul 17 2023 10:16:10 GMT+0000 (Coordinated Universal Time)
+    LobeOwner: []
+    Expert: []
+OngoingProposalInfo: []
+ClosedProposalInfo:
+  - ID: proposal0
+    State: accept
+    EndDate: Fri Feb 24 2023 15:05:24 GMT+0000 (Coordinated Universal Time)
+    Veto: false
+  - ID: proposal1
+    State: accept by lobe owner
+    StartDate: 7.3.2023, 11:02:04 (CET)
+    StartDate_Internal: Tue Mar 07 2023 10:02:04 GMT+0000 (Coordinated Universal Time)
+    EndDate: 9.3.2023, 11:02:04 (CET)
+    EndDate_Internal: Thu Mar 09 2023 10:02:04 GMT+0000 (Coordinated Universal Time)
+    Veto: false
+    URI: >-
+      https://github.com/tibonto/dr/commit/427f690a506c4404aebf3dbb532def01b5d895cd
+    Message: Battery Managemnt System ontology added
+    Author: member4
+    Domain: Battery Management System
+    LobeOwner: member3
+  - ID: proposal2
+    State: accept by lobe owner
+    StartDate: 14.5.2023, 16:01:30 (CET)
+    StartDate_Internal: Sun May 14 2023 14:01:30 GMT+0000 (Coordinated Universal Time)
+    EndDate: 15.5.2023, 14:26:52 (CET)
+    EndDate_Internal: Mon May 15 2023 12:26:52 GMT+0000 (Coordinated Universal Time)
+    Veto: false
+    URI: >-
+      https://github.com/tibonto/dr/commit/39bc5ee3b8e4774e66bfc7e7150ccfbdc30223a7
+    Message: >-
+      update test 13: DigitalReference.ttl, Lobes representations added, lobe
+      owners partially assigned
+    Author: member4
+    Domain: Supply Chain
+    LobeOwner: member1
+  - ID: proposal3
+    State: accept by lobe owner
+    StartDate: 30.6.2023, 12:37:55 (CET)
+    StartDate_Internal: Fri Jun 30 2023 10:37:55 GMT+0000 (Coordinated Universal Time)
+    EndDate: 30.6.2023, 13:55:56 (CET)
+    EndDate_Internal: Fri Jun 30 2023 11:55:56 GMT+0000 (Coordinated Universal Time)
+    Veto: false
+    URI: >-
+      https://github.com/tibonto/dr/commit/49822f5ba69988dc48650588cb0f5aa30ddb1fe1
+    Message: IRIs aligned for Sustainability Lobe - BMS, CO2 ontologies
+    Author: member4
+    Domain: Sustainability
+    LobeOwner: member3
+  - ID: proposal4
+    State: accept by lobe owner
+    StartDate: 5.7.2023, 13:14:01 (CET)
+    StartDate_Internal: Wed Jul 05 2023 11:14:01 GMT+0000 (Coordinated Universal Time)
+    EndDate: 5.7.2023, 15:31:52 (CET)
+    EndDate_Internal: Wed Jul 05 2023 13:31:52 GMT+0000 (Coordinated Universal Time)
+    Veto: false
+    URI: >-
+      https://github.com/tibonto/dr/commit/3d807c9bd4e9b09ca7d8a0760c7902aa75201c97
+    Message: Definition update in CO2SavingsElectriccar
+    Author: member4
+    Domain: Sustainability
+    LobeOwner: member3
+  - ID: proposal5
+    State: accept by lobe owner
+    StartDate: 17.7.2023, 12:16:10 (CET)
+    StartDate_Internal: Mon Jul 17 2023 10:16:10 GMT+0000 (Coordinated Universal Time)
+    EndDate: 17.7.2023, 13:40:24 (CET)
+    EndDate_Internal: Mon Jul 17 2023 11:40:24 GMT+0000 (Coordinated Universal Time)
+    Veto: false
+    URI: >-
+      https://github.com/tibonto/dr/commit/e6d10f8125f8d72ce35d8b91448a3311787bd30e
+    Message: Merge conflict resolution
+    Author: member4
+    Domain: Sustainability
+    LobeOwner: member3
+NewBlockRequest:
+  newBlockWaiting: 'false'
+  proposalID: n/a
+  author: n/a
+  lobeOwner: n/a
+  supervisor: n/a
+LatestDR: https://github.com/tibonto/dr/commit/e6d10f8125f8d72ce35d8b91448a3311787bd30e
+FileHash: >-
+  https://github.com/tibonto/dr/archive/e6d10f8125f8d72ce35d8b91448a3311787bd30e.zip

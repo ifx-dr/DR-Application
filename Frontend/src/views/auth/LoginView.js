@@ -11,15 +11,16 @@ class LoginViews extends Component {
     super(props);
     this.state = {
       userName: '',
-      ID: '',
+      Email: '',
       PWD: '',
       flag: false
     }
   }
   handleChangeN = async (event) => {
     let value = event.target.value;
+    console.log("value= "+ value);
     this.setState({
-      ID: value
+      Email: value
     })
   }
   handleChangePWD = async (event) => {
@@ -29,15 +30,13 @@ class LoginViews extends Component {
     })
   }
   async handleSubmit(event)  {
-    // let navigate = useNavigate();
-    // const {token, setToken} = useToken();
     event.preventDefault();
     let data = {
-      memberID: this.state.ID,
+      useremail: this.state.Email,
       password: this.state.PWD,
     };
-    console.log("get memberInfo: "+data.memberID);
-    // let flag = 1;
+    console.log("data= "+JSON.stringify(data));
+    console.log("get memberInfo: "+data.useremail);
     try{
       await fetch('http://localhost:3001/login', {
         method: 'POST',
@@ -49,16 +48,13 @@ class LoginViews extends Component {
         return response.json();
       }).then((body)=>{
         console.log(body);
-        // re-login: update token
-        // setToken(body);
         if(!body.error){
-          // window.userRole = body.Role;
           body = body.success;
           if(body.Fail){
             alert(body.Fail)
             return;
           }
-          sessionStorage.setItem('token',JSON.stringify(body));
+          sessionStorage.setItem('token',body.token);
           alert(`
                   ID:   ${body.ID}\n
                   Name: ${body.Name}\n
@@ -69,7 +65,6 @@ class LoginViews extends Component {
         }
         else{
           alert(body.error);
-          // return 1;
         }
       })
     }
@@ -82,7 +77,7 @@ class LoginViews extends Component {
     const EmployeeContext = React.createContext({
       data: '',
       changeEmployeeInfo: () => {},
-    });
+    }); 
     if(this.state.flag){
       return <Navigate to='/app/dashboard' state={this.state}></Navigate>
     }
@@ -98,11 +93,11 @@ class LoginViews extends Component {
             <TextField
               fullWidth
               onChange={this.handleChangeN}
-              label="User ID"
+              label="User Email"
               margin="normal"
-              name="ID"
-              type="ID"
-              value={this.state.ID}
+              name="Email"
+              type="email"
+              value={this.state.Email}
               variant="outlined"
             />
             <TextField
