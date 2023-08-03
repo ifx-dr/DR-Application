@@ -47,14 +47,16 @@ class LoginViews extends Component {
       }).then((response)=>{
         return response.json();
       }).then((body)=>{
-        console.log(body);
+        console.log(JSON.stringify(body));
         if(!body.error){
+          const token=body.Token;
           body = body.success;
+          console.log("body token= "+token);
           if(body.Fail){
             alert(body.Fail)
             return;
           }
-          sessionStorage.setItem('token',body.token);
+          sessionStorage.setItem('token', token);
           alert(`
                   ID:   ${body.ID}\n
                   Name: ${body.Name}\n

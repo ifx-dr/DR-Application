@@ -17,9 +17,13 @@ class Tokens extends Component {
       id: 'visitor'
     }
     let token = 0;
-    let session_token = sessionStorage.getItem('token')
+    const jwt=require('jsonwebtoken');
+    let session_token = sessionStorage.getItem('token');
+    const secretKey='secretKey';
+   
     if(session_token!=null){
-      data.id = JSON.parse(session_token).ID;
+      let decoded=jwt.verify(token,secretKey);
+      data.id = decoded.ID;
     }
     // if(window.userID) {
     //   data.id = window.userID;

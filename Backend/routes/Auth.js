@@ -48,14 +48,14 @@ router.post('/login', async (req, res) => {
   if (!passwordMatch) {
     return res.status(401).json({ message: 'Invalid credentials' });
   }
-  // Generate a JWT token and send it in the response
-  const token = jwt.sign({ useremail }, "secretKey");
   data={
     ID:user.ID,
     Name:user.Name,
-    Token:token,
   }
-  result={"success":data}
+  // Generate a JWT token and send it in the response
+  const token = jwt.sign({ data },'secretKey');
+  
+  result={"success":data, "Token":token}
   console.log("result= "+JSON.stringify(result));
   res.status(200).json(result);
 });

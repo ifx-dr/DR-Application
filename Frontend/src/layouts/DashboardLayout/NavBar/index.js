@@ -115,16 +115,20 @@ const NavBar = ({ onMobileClose, openMobile }) => {
   const classes = useStyles();
   const location = useLocation();
 
-  // const {token, setToken} = useToken();
-  // console.log(token)
+  const jwt=require('jsonwebtoken');
   let token = sessionStorage.getItem('token');
+  const secretKey='secretKey';
+  
   let user;
   if(token!=null){
-    token = JSON.parse(token);
+
+    let decoded=jwt.verify(token,secretKey); //contains the user information
+    console.log("decoded "+JSON.stringify(decoded));
+    
     user = {
-      jobTitle: token.Name,
-      name: token.ID
-    }
+      jobTitle: decoded.data.Name,
+      name: decoded.data.ID
+    }   
   }
   else{
     user = {
@@ -132,10 +136,6 @@ const NavBar = ({ onMobileClose, openMobile }) => {
       name: "Bob"
     }
   }
-  // let user = {
-  //   jobTitle: 'Visitor',
-  //   name: "Bob"
-  // }
 
   useEffect(() => {
     if (openMobile && onMobileClose) {
