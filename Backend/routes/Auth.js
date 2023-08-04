@@ -6,17 +6,17 @@ const jwt = require('jsonwebtoken');
 const fs = require('fs');
 const yaml = require('js-yaml');
 const config = require('../../config');
-console.log(config);
+
 // Access the secret key from the config
 const secretKey = config.secretKey;
-console.log(secretKey);
+
 
 //Access user info in YAML file
 const userDataPath = 'ledger_DR.yaml';
 const userData = fs.readFileSync(userDataPath, 'utf8');
 const usersData = yaml.load(userData);
 const usersInfoData=usersData['UserInfo'];
-//console.log(usersInfoData);
+
 
 let lastUserId = 4; //there are 4 members in the actual yaml file
 
