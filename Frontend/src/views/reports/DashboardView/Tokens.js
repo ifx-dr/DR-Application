@@ -20,7 +20,8 @@ class Tokens extends Component {
     const jwt=require('jsonwebtoken');
     let session_token = sessionStorage.getItem('token');
     const secretKey='secretKey';
-   
+    
+    //this may be useless
     if(session_token!=null){
       let decoded=jwt.verify(token,secretKey);
       data.id = decoded.ID;
@@ -29,34 +30,41 @@ class Tokens extends Component {
     //   data.id = window.userID;
     // }
     // const data = await fetch('http://localhost:3001/tokens').then((response) => response.json());
-    try{
-      await fetch('http://localhost:3001/tokens', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-      }).then(function(response){
-        return response.json();
-      }).then(function(body){
-        if(!body.error){
-          token=body.success;
-          console.log(body);
-        }
-        else{
-          alert(body.error)
-        }
-      })
-      console.log('RESULT= ' + token);
-      this.setState({
-        tokens: token
-      })
-      console.log('***********Succesfully invoke func '+this.state.tokens);
+
+    //display only if the user is connected
+    if(session_token){
+      console.log("before calling the tokens");
+      try{
+        await fetch('http://localhost:3001/tokens', {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${session_token}`,
+          },
+          body: JSON.stringify(data)
+        }).then(function(response){
+          return response.json();
+        }).then(function(body){
+          if(!body.error){
+            token=body.success;
+            console.log(body);
+          }
+          else{
+            alert(body.error)
+          }
+        });
+        console.log('RESULT= ' + token);
+        this.setState({
+          tokens: token
+        });
+        console.log('***********Succesfully invoke func '+this.state.tokens);
+      }
+      catch (error) {
+        alert(error);
+      }
+    };
     }
-    catch (error) {
-      alert(error);
-    }
-  };
+    
 
   render() {
 
