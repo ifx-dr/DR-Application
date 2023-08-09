@@ -36,12 +36,14 @@ router.get("/OngoingDR", async(req,res)=>{
 });
 router.get('/tokens',async(req,res)=>{
     let result;
-    console.log("in tokens");
-    const token=req.headers.auhtorization.split(' ')[1];
+    //console.log(req.headers.authorization);
+    const token=req.headers.authorization.split(' ')[1];
     try{
         const decoded=jwt.verify(token,'secretKey');
-        console.log(decoded);
-        let countToken=usersInfoData[decoded.ID].Tokens;
+        //console.log("ide= "+decoded.data.ID);
+        const user=usersInfoData.find(user=> user.ID==decoded.data.ID);
+        console.log(user);
+        let countToken=user.Tokens;
         console.log("count tokens: "+countToken);
         result = {"success":JSON.parse(countToken)};
     }catch(error){

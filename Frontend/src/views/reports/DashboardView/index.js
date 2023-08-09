@@ -124,8 +124,8 @@ const useStyles = makeStyles((theme) => ({
 
 const Dashboard = () => {
   const classes = useStyles();
-  let location = useLocation();
-  console.log(location);
+  /* let location = useLocation();
+  console.log(location); */
   // if(location.state!=null&&location.state.flag==true){
     
   //   window.userID = location.state.ID;

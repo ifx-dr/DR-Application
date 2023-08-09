@@ -9,10 +9,12 @@ class Tokens extends Component {
   }
 
   componentDidMount() {
+    console.log("in component did mount");
     this.getTokens();
   }
 
   getTokens = async () => {
+    console.log("in token");
     const data = {
       id: 'visitor'
     }
@@ -20,12 +22,18 @@ class Tokens extends Component {
     const jwt=require('jsonwebtoken');
     let session_token = sessionStorage.getItem('token');
     const secretKey='secretKey';
+    console.log(session_token);
     
     //this may be useless
-    if(session_token!=null){
-      let decoded=jwt.verify(token,secretKey);
-      data.id = decoded.ID;
+    if(session_token!==null){
+      let decoded=jwt.verify(session_token,secretKey);
+      console.log("decoded "+JSON.stringify(decoded));
+      data.id = decoded.data.ID;
+      
     }
+    console.log("in token");
+    console.log("session_token");
+    
     // if(window.userID) {
     //   data.id = window.userID;
     // }
@@ -40,8 +48,7 @@ class Tokens extends Component {
           headers: {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${session_token}`,
-          },
-          body: JSON.stringify(data)
+          }
         }).then(function(response){
           return response.json();
         }).then(function(body){
@@ -63,7 +70,7 @@ class Tokens extends Component {
         alert(error);
       }
     };
-    }
+  }
     
 
   render() {
