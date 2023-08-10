@@ -1,13 +1,6 @@
 import React, { Component } from 'react';
 import { Card, CardContent, Grid, Typography } from '@material-ui/core';
-// import { Avatar, Box, Button, Card, CardContent, Grid, Typography } from '@material-ui/core';
-// import PeopleIcon from '@material-ui/icons/PeopleOutlined';
-// import { DropzoneDialog, DropzoneDialogBase } from 'material-ui-dropzone';
-// import {DropzoneArea} from 'material-ui-dropzone';
 
-// import $ from 'jquery';
-// import * as axios from 'ajax';
-// import { Form } from 'formik';
 class LatestDR extends Component {
   constructor(props) {
     super(props);
@@ -26,6 +19,8 @@ class LatestDR extends Component {
     // this.getOngoingDR();
     this.getDRHash();
   }
+
+  //get repository information 
   getRepo = async () => {
     try{
       const Repo = await fetch('http://localhost:3001/Repo').then((response) => response.json());
@@ -42,6 +37,8 @@ class LatestDR extends Component {
       // alert(error);
     }
   }
+
+  //get latest update URI
   getLatestDR = async () => {
     try{
       const DRURI = await fetch('http://localhost:3001/DR').then((response) => response.json());
@@ -58,6 +55,8 @@ class LatestDR extends Component {
       // alert(error);
     }
   };
+
+  //get lastest update download link
   getDRHash = async () => {
     try{
       const DRHash = await fetch('http://localhost:3001/DRHash').then((response) => response.json());
@@ -79,6 +78,9 @@ class LatestDR extends Component {
       open: false
     })
   };
+
+
+  //to update latest update info
   updateDR = async() => {
     let link = '';
     let prefix = '';
