@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
 import { Card, CardContent, Grid, Typography } from '@material-ui/core';
-// import { Avatar, Box, Button, Card, CardContent, Grid, Typography } from '@material-ui/core';
-// import PeopleIcon from '@material-ui/icons/PeopleOutlined';
-// import { DropzoneDialog, DropzoneDialogBase } from 'material-ui-dropzone';
-// import {DropzoneArea} from 'material-ui-dropzone';
 
-// import $ from 'jquery';
-// import * as axios from 'ajax';
-// import { Form } from 'formik';
+/*
+  Class retrieving and displaying the onGoing proposal
+*/
 class DRHash extends Component {
   constructor(props) {
     super(props);

@@ -10,8 +10,8 @@ const userData = fs.readFileSync(userDataPath, 'utf8');
 const usersData = yaml.load(userData);
 const usersInfoData=usersData['UserInfo'];
 const onGoingDRData=usersData['OngoingProposalInfo'];
-console.log("ongoingdr= "+onGoingDRData);
 
+//retrieve the total member number 
 router.get('/allMembers', async(req,res)=>{
     let result;
     try{
@@ -22,13 +22,13 @@ router.get('/allMembers', async(req,res)=>{
     }
     res.json(result);
 });
+
+//handle get request to display the URI of the ongoing proposal
 router.get("/OngoingDR", async(req,res)=>{
-    console.log("in ongoingDR");
     let result;
     try{
-        let ongoingDR= onGoingDRData;
-        console.log(ongoingDR);
-        result = {"success":JSON.parse(ongoingDR)};
+        let ongoingDR= onGoingDRData[0];
+        result = {"success":ongoingDR.URI};
     }catch(error){
         result = {"error":error.toString()};
     }
