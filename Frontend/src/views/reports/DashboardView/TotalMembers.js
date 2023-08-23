@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-// import clsx from 'clsx';
 import { Avatar, Card, CardContent, Grid, Typography } from '@material-ui/core';
 import PeopleIcon from '@material-ui/icons/PeopleOutlined';
-// import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
+
 
 export default class TotalMembers extends Component{
   constructor() {
@@ -12,6 +11,11 @@ export default class TotalMembers extends Component{
   componentDidMount() {
     this.getMembers();
   };
+
+  /**
+   * GET request to retrive the number of members of the voting app
+   * If success, returns a JSON with the key-value success and object the members count
+   */
   getMembers = async () => {
     try{
       let data = await fetch('http://localhost:3001/allMembers').then((response) =>response.json());

@@ -9,12 +9,10 @@ class Tokens extends Component {
   }
 
   componentDidMount() {
-    console.log("in component did mount");
     this.getTokens();
   }
 
   getTokens = async () => {
-    console.log("in token");
     const data = {
       id: 'visitor'
     }
@@ -22,23 +20,13 @@ class Tokens extends Component {
     const jwt=require('jsonwebtoken');
     let session_token = sessionStorage.getItem('token');
     const secretKey='secretKey';
-    console.log(session_token);
     
-    //this may be useless
+    //identify the user
     if(session_token!==null){
       let decoded=jwt.verify(session_token,secretKey);
-      console.log("decoded "+JSON.stringify(decoded));
       data.id = decoded.data.ID;
-      
     }
-    console.log("in token");
-    console.log("session_token");
     
-    // if(window.userID) {
-    //   data.id = window.userID;
-    // }
-    // const data = await fetch('http://localhost:3001/tokens').then((response) => response.json());
-
     //display only if the user is connected
     if(session_token){
       console.log("before calling the tokens");
@@ -54,13 +42,11 @@ class Tokens extends Component {
         }).then(function(body){
           if(!body.error){
             token=body.success;
-            console.log(body);
           }
           else{
             alert(body.error)
           }
         });
-        console.log('RESULT= ' + token);
         this.setState({
           tokens: token
         });
