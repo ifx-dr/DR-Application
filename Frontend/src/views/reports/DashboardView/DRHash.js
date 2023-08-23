@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { Card, CardContent, Grid, Typography } from '@material-ui/core';
 
-/*
-  Class retrieving and displaying the onGoing proposal
-*/
+/**
+ * Class retrieving and displaying the onGoing proposal repository link
+ */
+  
 class DRHash extends Component {
   constructor(props) {
     super(props);
@@ -16,6 +17,11 @@ class DRHash extends Component {
   componentDidMount() {
     this.getOngoingDR()
   }
+
+  /**
+   * GET request retriving the hash of the ongoing update proposal
+   * If success, returns a JSON with the key-value success and object onGoingDR
+   */
   getOngoingDR = async () => {
     try{
       const OngoingDR = await fetch('http://localhost:3001/OngoingDR').then((response) => response.json());

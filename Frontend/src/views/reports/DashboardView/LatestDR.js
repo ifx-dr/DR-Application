@@ -14,14 +14,17 @@ class LatestDR extends Component {
   }
 
   componentDidMount() {
-    this.getRepo();
+    //this.getRepo();
     this.getLatestDR(); // .then(((response) => console.log(response)));
-    // this.getOngoingDR();
     this.getDRHash();
   }
 
-  //get repository information 
-  getRepo = async () => {
+  /**
+   * GET request to retrieve information about the ontology repository
+   * If success, returns a JSON with the key-value success and object Repo
+  */ 
+  //code commented because there is no utility for now
+  /* getRepo = async () => {
     try{
       const Repo = await fetch('http://localhost:3001/Repo').then((response) => response.json());
       if(!Repo.error){
@@ -36,9 +39,12 @@ class LatestDR extends Component {
     catch (error){
       // alert(error);
     }
-  }
+  } */
 
-  //get latest update URI
+  /**
+   * GET request to retrieve the latest update commit URI
+   * If success, returns a JSON with the key-value success and object the link (String)
+  */
   getLatestDR = async () => {
     try{
       const DRURI = await fetch('http://localhost:3001/DR').then((response) => response.json());
@@ -56,7 +62,10 @@ class LatestDR extends Component {
     }
   };
 
-  //get lastest update download link
+  /**
+   * GET request to retrieve the lastest update download link
+   * If success, returns a JSON with the key-value success and object the link (String)
+  */
   getDRHash = async () => {
     try{
       const DRHash = await fetch('http://localhost:3001/DRHash').then((response) => response.json());
@@ -79,9 +88,9 @@ class LatestDR extends Component {
     })
   };
 
-
+  //commented because it is not used for now
   //to update latest update info
-  updateDR = async() => {
+  /* updateDR = async() => {
     let link = '';
     let prefix = '';
     if(this.state.Repo.Platform==='GitHub'){
@@ -140,7 +149,7 @@ class LatestDR extends Component {
             })
           }
         })
-  }
+  } */
 
   render() {
     return (

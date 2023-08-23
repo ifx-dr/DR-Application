@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import { Card, CardContent, Grid, Typography, Divider } from '@material-ui/core';
 
+/**
+ * Display information of the latest block
+ */
+
+
 class BlockInfo extends Component {
   constructor(props) {
     super(props);
@@ -11,15 +16,16 @@ class BlockInfo extends Component {
   }
 
   componentDidMount() {
-    this.getLatestBlock(); // .then(((response) => console.log(response)));
+    this.getLatestBlock(); 
     this.getNewBlockRequest();
 }
-
+  /**
+   * GET request to retrieve information about the new update request
+   * If success, returns a JSON with the key-value success and object newBlockRequest 
+   */
   getNewBlockRequest = async () => {
     try{
       let newBlockReq = await fetch('http://localhost:3001/checkNewBlockRequest').then((response) => response.json());
-      // if(newBlockReq==='true')
-      //     newBlockReq = '456';
       if(!newBlockReq.error){
         this.setState({
           newBlockReq: newBlockReq.success,
@@ -33,13 +39,19 @@ class BlockInfo extends Component {
       // alert(error);
     } 
   };
+
+  //outdated ?
   getLatestBlock = async () => {
     try{
       let latestBlock = await fetch('http://localhost:3001/checkLatestBlock').then((response) => response.json());
       if(!latestBlock.error){
+        console.log("no error");
+        console.log(latestBlock);
         latestBlock = JSON.parse(latestBlock.success);
-        if(latestBlock.data.includes('UpdatedVersion'))
+        if(latestBlock.data.includes('UpdatedVersion')){
           latestBlock.data = JSON.parse(latestBlock.data);
+        }
+        
         this.setState({
           latestBlock: latestBlock,
         }, console.log(latestBlock));
