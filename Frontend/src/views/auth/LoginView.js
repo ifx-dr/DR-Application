@@ -72,13 +72,10 @@ class LoginViews extends Component {
     }
     catch(error){alert(error)}
   }
-  updateEmployeeDetails = (event) => {
-    this.setState({ data:{Id:event.target.value} });
-  };
+
   render() {
-    const EmployeeContext = React.createContext({
-      data: '',
-      changeEmployeeInfo: () => {},
+    const UserContext = React.createContext({
+      data: ''
     }); 
     if(this.state.flag){
       return <Navigate to='/app/dashboard' state={this.state}></Navigate>
@@ -117,7 +114,7 @@ class LoginViews extends Component {
           <Button variant="contained" color="primary">
             <Input style={{color: "white"}} type="submit" value="Submit"/>
           </Button>
-          <EmployeeContext.Provider value={this.state}/>
+          <UserContext.Provider value={this.state}/>
 
         </Card>
       </form>)
