@@ -71,7 +71,7 @@ class BlockInfo extends Component {
         <CardContent>
           <Grid
             container
-            justify="space-between"
+            justifyContent="space-between"
             spacing={3}
           >
             <Grid item>
@@ -99,9 +99,9 @@ class BlockInfo extends Component {
                 variant="h6"
               >
                 {/* data: {this.state.latestBlock?this.state.latestBlock.data:'n/a'} <button><a href={this.state.latestBlock?this.state.latestBlock.data:'n/a'} style={{"text-decoration":"none"}} target="_blank" rel={"noopener noreferrer"}>check</a></button> */}
-                data: {(this.state.latestBlock)&&!(this.state.latestBlock.data.ProposedVersion)&&!(this.state.latestBlock.data.UpdatedVersion)?<button><a href={this.state.latestBlock.data} style={{"text-decoration":"none"}} target="_blank" rel={"noopener noreferrer"}>check data</a></button>:''}
-                {(this.state.latestBlock)&&(this.state.latestBlock.data.ProposedVersion)?<button><a href={this.state.latestBlock.data.ProposedVersion} style={{"text-decoration":"none"}} target="_blank" rel={"noopener noreferrer"}>check ProposedVersion</a></button>:''}
-                {(this.state.latestBlock)&&(this.state.latestBlock.data.UpdatedVersion)?<button><a href={this.state.latestBlock.data.UpdatedVersion} style={{"text-decoration":"none"}} target="_blank" rel={"noopener noreferrer"}>check UpdatedVersion</a></button>:''}
+                data: {(this.state.latestBlock)&&!(this.state.latestBlock.data.ProposedVersion)&&!(this.state.latestBlock.data.UpdatedVersion)?<button><a href={this.state.latestBlock.data} style={{"textDecoration":"none"}} target="_blank" rel={"noopener noreferrer"}>check data</a></button>:''}
+                {(this.state.latestBlock)&&(this.state.latestBlock.data.ProposedVersion)?<button><a href={this.state.latestBlock.data.ProposedVersion} style={{"textDecoration":"none"}} target="_blank" rel={"noopener noreferrer"}>check ProposedVersion</a></button>:''}
+                {(this.state.latestBlock)&&(this.state.latestBlock.data.UpdatedVersion)?<button><a href={this.state.latestBlock.data.UpdatedVersion} style={{"textDecoration":"none"}} target="_blank" rel={"noopener noreferrer"}>check UpdatedVersion</a></button>:''}
                 <p>{this.state.latestBlock?(
                   (!(this.state.latestBlock.data.ProposedVersion)&&!(this.state.latestBlock.data.UpdatedVersion))?
                   (this.state.latestBlock.data):

@@ -38,7 +38,7 @@ export default class TotalMembers extends Component{
         <CardContent>
           <Grid
             container
-            justify="space-between"
+            justifyContent="space-between"
             spacing={3}
           >
             <Grid item>

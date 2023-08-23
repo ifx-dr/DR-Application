@@ -50,7 +50,7 @@ class DRHash extends Component {
         <CardContent>
           <Grid
             container
-            justify="space-between"
+            justifyContent="space-between"
             spacing={3}
           >
             <Grid item>
@@ -61,7 +61,7 @@ class DRHash extends Component {
               >
                 {/* Here you can download the DR:
                 <button><a href={this.state.Hash} style={{"text-decoration":"none"}} target="_blank" rel={"noopener noreferrer"}>download DR</a></button> */}
-                Here is the DR in the ongoing proposal: <button><a href={this.state.OngoingDR} style={{"text-decoration":"none"}} target="_blank" rel={"noopener noreferrer"}>check</a></button>
+                Here is the DR in the ongoing proposal: <button><a href={this.state.OngoingDR} style={{"textDecoration":"none"}} target="_blank" rel={"noopener noreferrer"}>check</a></button>
               </Typography>
               <Typography
                 color="textPrimary"

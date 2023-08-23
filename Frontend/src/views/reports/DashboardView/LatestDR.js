@@ -157,7 +157,7 @@ class LatestDR extends Component {
         <CardContent>
           <Grid
             container
-            justify="space-between"
+            justifyContent="space-between"
             spacing={3}
           >
             <Grid item>
@@ -167,7 +167,7 @@ class LatestDR extends Component {
                 variant="h6"
               >
                 <p>For visualization, please check:<a href={'https://service.tib.eu/sc3/'} target="_blank" rel={"noopener noreferrer"}>https://service.tib.eu/sc3/</a></p>
-                Here is the latest DR: <button><a href={this.state.DR} style={{"text-decoration":"none"}} target="_blank" rel={"noopener noreferrer"}>check</a></button> {/* <button onClick={this.updateDR}>update</button> */}
+                Here is the latest DR: <button><a href={this.state.DR} style={{"textDecoration":"none"}} target="_blank" rel={"noopener noreferrer"}>check</a></button> {/* <button onClick={this.updateDR}>update</button> */}
               </Typography>
               <Typography
                 color="textPrimary"
@@ -182,7 +182,7 @@ class LatestDR extends Component {
               >
                 {/* Here is the DR in the ongoing proposal: <button><a href={this.state.OngoingDR} style={{"text-decoration":"none"}} target="_blank" rel={"noopener noreferrer"}>check</a></button> */}
                 Here you can download the DR:
-                <button><a href={this.state.Hash} style={{"text-decoration":"none"}} target="_blank" rel={"noopener noreferrer"}>download DR</a></button>
+                <button><a href={this.state.Hash} style={{"textDecoration":"none"}} target="_blank" rel={"noopener noreferrer"}>download DR</a></button>
               </Typography>
               <Typography
                 color="textPrimary"
