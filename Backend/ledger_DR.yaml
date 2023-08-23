@@ -21,18 +21,18 @@ OntologyInfo:
   Platform: GitHub
   AccessToken: n/a
 BlockchainInfo:
-  FileName: ./historic/hist_DR.xlsx
-  OutFileName: ./historic/hist_DR.xlsx
+  FileName: ./blockchain/blockchain_hist_DR.xlsx
+  OutFileName: ./blockchain/blockchain_hist_DR.xlsx
 UserInfo:
   - ID: member1
     Name: Hans
-    Password: $2a$10$ACUrWng8gxA5zRkzFbLenO4HJYAFVQrCVMCT8uItLQAXaZMt/t72.
+    Password: '111'
     Email: 111@gmail.com
-    Tokens: 990
+    Tokens: 970
     Total_Proposal: 0
     Total_Accepted_Proposal: 0
-    LastParticipation: 15.5.2023, 14:26:50 (CET)
-    LastParticipation_Internal: Mon May 15 2023 12:26:50 GMT+0000 (Coordinated Universal Time)
+    LastParticipation: 8.8.2023, 10:39:24 (CET)
+    LastParticipation_Internal: Tue Aug 08 2023 08:39:24 GMT+0000 (Coordinated Universal Time)
     LobeOwner:
       - Planning
       - Time
@@ -42,13 +42,13 @@ UserInfo:
     Expert: []
   - ID: member2
     Name: Philipp
-    Password: $2a$10$L0UIHg5190t2UV7l6tDGs.d8EQTBt6CSbY3B2vqlNQ7HurQaTNTV2
+    Password: '222'
     Email: 222@gmail.com
-    Tokens: 1000
+    Tokens: 880
     Total_Proposal: 0
     Total_Accepted_Proposal: 0
-    LastParticipation: 23.1.2023, 01:00:00 (CET)
-    LastParticipation_Internal: Mon Jan 23 2023 00:00:00 GMT+0000 (Coordinated Universal Time)
+    LastParticipation: 8.8.2023, 10:37:07 (CET)
+    LastParticipation_Internal: Tue Aug 08 2023 08:37:07 GMT+0000 (Coordinated Universal Time)
     LobeOwner:
       - Product
       - Power
@@ -57,13 +57,13 @@ UserInfo:
     Expert: []
   - ID: member3
     Name: Marta
-    Password: $2a$10$xoQ7KVuImugsPMurdu/BmOtpfrFvict7gcVz/PNdHpBZg8YVGJR1y
+    Password: '333'
     Email: 333@gmail.com
-    Tokens: 1010
-    Total_Proposal: 0
-    Total_Accepted_Proposal: 0
-    LastParticipation: 17.7.2023, 13:40:22 (CET)
-    LastParticipation_Internal: Mon Jul 17 2023 11:40:22 GMT+0000 (Coordinated Universal Time)
+    Tokens: 1020
+    Total_Proposal: 1
+    Total_Accepted_Proposal: 1
+    LastParticipation: 7.8.2023, 09:04:48 (CET)
+    LastParticipation_Internal: Mon Aug 07 2023 07:04:48 GMT+0000 (Coordinated Universal Time)
     LobeOwner:
       - System
       - Process
@@ -74,7 +74,7 @@ UserInfo:
     Expert: []
   - ID: member4
     Name: Yipeng
-    Password: $2a$10$VvGZeqv6JHgnkRx0hipYQOY8GnNz/xl3Jeng4DzBLhLxurmHLpwla
+    Password: '444'
     Email: 444@gmail.com
     Tokens: 1000
     Total_Proposal: 4
@@ -156,12 +156,25 @@ ClosedProposalInfo:
     Author: member4
     Domain: Sustainability
     LobeOwner: member3
+  - ID: proposal6
+    State: accept by lobe owner
+    StartDate: 7.8.2023, 12:04:48 (CET)
+    StartDate_Internal: Mon Aug 07 2023 12:04:48 GMT+0000 (Coordinated Universal Time)
+    EndDate: 8.8.2023, 10:39:26 (CET)
+    EndDate_Internal: Tue Aug 08 2023 08:39:26 GMT+0000 (Coordinated Universal Time)
+    Veto: false
+    URI: >-
+      https://github.com/tibonto/dr/commit/85f9cce24c27847fce2b2bb1ee7d9f2e05ce802d 
+    Message: Planning Lobe and Organization Lobe added
+    Author: member3
+    Domain: Planning
+    LobeOwner: member1
 NewBlockRequest:
   newBlockWaiting: 'false'
   proposalID: n/a
   author: n/a
   lobeOwner: n/a
   supervisor: n/a
-LatestDR: https://github.com/tibonto/dr/commit/e6d10f8125f8d72ce35d8b91448a3311787bd30e
+LatestDR: https://github.com/tibonto/dr/commit/85f9cce24c27847fce2b2bb1ee7d9f2e05ce802d
 FileHash: >-
-  https://github.com/tibonto/dr/archive/e6d10f8125f8d72ce35d8b91448a3311787bd30e.zip
+  https://github.com/tibonto/dr/archive/85f9cce24c27847fce2b2bb1ee7d9f2e05ce802d.zip
