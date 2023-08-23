@@ -25,6 +25,7 @@ const router = express.Router();
 // Route to handle user login
 router.post('/login', async (req, res) => {
 
+  //hash passwords if their are not
   /* for (const user of usersInfoData) {
     if (!user.Password.startsWith('$2a$')) {
       user.Password = await bcrypt.hash(user.Password, 10);
@@ -56,6 +57,7 @@ router.post('/login', async (req, res) => {
   const token = jwt.sign({ data },'secretKey');
   
   result={"success":data, "Token":token}
+  console.log("successfully loggedin");
   console.log("result= "+JSON.stringify(result));
   res.status(200).json(result);
 });
