@@ -11,6 +11,7 @@ import {
   Button
 } from '@material-ui/core';
 import { Navigate } from 'react-router';
+const jwt=require('jsonwebtoken');
 
 export default class CreateNewProp extends Component {
   constructor() {
@@ -23,7 +24,7 @@ export default class CreateNewProp extends Component {
       Valid: '',
       // Author: window.userID,
       Author: '',
-      Creation_Date: '',
+      Creation_Date: new Date(),
       Messages: '',
       Download: '',
       Redirect:'',
@@ -54,6 +55,8 @@ export default class CreateNewProp extends Component {
     }
     catch{}
   };
+
+  //not yet linked to backend because not used yet
   saveDomains = async (newConfig) => {
     await fetch('http://localhost:3001/saveDomainsInFrontend', {
         method: 'POST',
@@ -73,9 +76,8 @@ export default class CreateNewProp extends Component {
         alert('Please login in!');
         return;
       }
-      token = JSON.parse(token);
+      let decoded=jwt.verify(token,'secretKey');
       let newBlockReq = await fetch('http://localhost:3001/checkNewBlockRequest').then((response) => response.json());
-      // newBlockReq = JSON.parse(newBlockReq);
       if(newBlockReq.error){
         alert(newBlockReq.error);
         this.setState({
@@ -86,7 +88,7 @@ export default class CreateNewProp extends Component {
       // alert(JSON.stringify(newBlockReq));
       newBlockReq = newBlockReq.success;
       if(newBlockReq.newBlockWaiting==='true'){
-        if(newBlockReq.author===token.ID||newBlockReq.lobeOwner===token.ID){
+        if(newBlockReq.author===decoded.ID||newBlockReq.lobeOwner===decoded.ID){
           alert('A new block is to be generated before a new proposal!');
           this.setState({
             Redirect:'GenerateBlock'
@@ -138,7 +140,7 @@ export default class CreateNewProp extends Component {
   }
 
   async handleSubmit(event){
-    // const {token, setToken} = useToken();
+    //the user has to be connected to create a proposals
     let token = sessionStorage.getItem('token');
     if(token==null){
       this.setState({
@@ -147,19 +149,15 @@ export default class CreateNewProp extends Component {
       alert('Please login in!');
       return;
     }
-    // console.log("before parse: "+token)
-    token = JSON.parse(token);
-    // console.log(token);
-    // console.log("author: "+token.ID);
+    
+    let decoded=jwt.verify(token,'secretKey');
+
     event.preventDefault();
 
     let domain;
+
+    //to add a domain, not displayed yet
     if(this.state.NewDomain!==''){
-      // this.setState({
-      //   Domain: this.state.NewDomain
-      // })
-      // console.log(this.state.Domain)
-      // console.log(this.state.NewDomain)
       domain = this.state.NewDomain;
       if(!(this.state.allDomains.find(d => d===domain))){
         let newConfig = {
@@ -174,33 +172,34 @@ export default class CreateNewProp extends Component {
       domain = this.state.Domain;
 
     const data = {
-      type: this.state.Type,
-      // domain: this.state.Domain,
-      domain:domain,
-      // author: this.state.Author,
-      author: token.ID,
-      // author: 'member1',
-      uri: this.state.URI,
-      message: this.state.Messages,
-      download: this.state.Download,
-      originalID: ''
+      ID:"",
+      Type: this.state.Type,
+      Domain:domain[0], //receives a list
+      Author: decoded.data.ID,
+      URI: this.state.URI,
+      Message: this.state.Messages,
+      Download: this.state.Download,
+      OriginalID: '',
+      Creation_Date: '',
+      NumAcceptedVites:0,
+      NumRejectedVotes:0,
+      NumExperts:0,
+      AcceptedVotes:[],
+      RejectedVotes:[]
     }
     // check if input is valid
-    if(data.domain.length===0){
+    if(data.Domain.length===0){
       alert('Please choose a domain!');
       return;
     }
-    if(data.uri.length===0){
+    if(data.URI.length===0){
       alert('Please input the URI!');
       return;
     }
-    if(data.download.length===0){
+    if(data.Download.length===0){
       alert('Please input the download link!');
       return;
     }
-    // alert(JSON.stringify(data));
-    // return;
-      // console.log("new: "+token)
     console.log('****New Proposal invokes createProposal api*********');
     try{
       await fetch('http://localhost:3001/createProposal', {
@@ -210,8 +209,6 @@ export default class CreateNewProp extends Component {
         },
         body: JSON.stringify(data)
       }).then(function(response){
-
-        // alert('Your proposal is created');
         return response.json()
       }).then((body)=>{
         // alert(body);
