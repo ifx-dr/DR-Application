@@ -185,7 +185,8 @@ export default class CreateNewProp extends Component {
       NumRejectedVotes:0,
       NumExperts:0,
       AcceptedVotes:[],
-      RejectedVotes:[]
+      RejectedVotes:[],
+      LobeOwner:''
     }
     // check if input is valid
     if(data.Domain.length===0){

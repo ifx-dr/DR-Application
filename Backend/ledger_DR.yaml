@@ -83,7 +83,41 @@ UserInfo:
     LastParticipation_Internal: Mon Jul 17 2023 10:16:10 GMT+0000 (Coordinated Universal Time)
     LobeOwner: []
     Expert: []
-OngoingProposalInfo: []
+OngoingProposalInfo:
+  - ID: ''
+    Type: newProposal
+    Domain: Supply Chain
+    Author: member1
+    URI: >-
+      https://github.com/tibonto/dr/commit/49822f5ba69988dc48650588cb0f5aa30ddb1fe1
+    Message: IRIs aligned for Sustainability Lobe - BMS, CO2 ontologies
+    Download: >-
+      https://github.com/tibonto/dr/archive/49822f5ba69988dc48650588cb0f5aa30ddb1fe1.zip
+    OriginalID: ''
+    Creation_Date: ''
+    NumAcceptedVites: 0
+    NumRejectedVotes: 0
+    NumExperts: 0
+    AcceptedVotes: []
+    RejectedVotes: []
+    LobeOwner: ''
+  - ID: ''
+    Type: newProposal
+    Domain: Time
+    Author: member1
+    URI: >-
+      https://github.com/tibonto/dr/commit/49822f5ba69988dc48650588cb0f5aa30ddb1fe1
+    Message: IRIs aligned for Sustainability Lobe - BMS, CO2 ontologies
+    Download: >-
+      https://github.com/tibonto/dr/archive/49822f5ba69988dc48650588cb0f5aa30ddb1fe1.zip
+    OriginalID: ''
+    Creation_Date: ''
+    NumAcceptedVites: 0
+    NumRejectedVotes: 0
+    NumExperts: 0
+    AcceptedVotes: []
+    RejectedVotes: []
+    LobeOwner: ''
 ClosedProposalInfo:
   - ID: proposal0
     State: accept

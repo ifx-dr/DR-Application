@@ -69,11 +69,6 @@ class DRHash extends Component {
               >
                 {this.state.OngoingDR}
               </Typography>
-              {/* <button>
-              <a style='text-decoration:none;' href="https://www.w3schools.com" 
-               target="_blank">
-                download DR 
-              </a></button> */}
             </Grid>
           </Grid>
         </CardContent>
