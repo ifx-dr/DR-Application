@@ -9,6 +9,7 @@ import {
   TextField, Input, Button
 } from '@material-ui/core';
 import { Navigate } from 'react-router';
+const jwt=require('jsonwebtoken');
 
 export default class Vote extends Component {
   constructor() {
@@ -81,14 +82,13 @@ export default class Vote extends Component {
       alert('Please login in!');
       return;
     }
-    token = JSON.parse(token);
+    token=jwt.verify(token,'secretKey');
 
     event.preventDefault();
     clearInterval(this.state.intervalId);
     const data = {
       prop_ID: this.state.prop_ID,
       vote: this.state.vote,
-      // author_ID: window.userID,
       author_ID: token.ID,
       messages: this.state.messages,
     }
@@ -159,7 +159,7 @@ export default class Vote extends Component {
                   Domain: {this.state.prop.Domain}
                 </p>
                 <p>
-                  AuthorID: {this.state.prop.AuthorID}
+                  AuthorID: {this.state.prop.Author}
                 </p>
                 <p>
                   ProposalType: {this.state.prop.Type}
@@ -181,7 +181,7 @@ export default class Vote extends Component {
                 Proposal ID: {this.state.prop.ID}
                 </p>
                 <p>
-                Proposal_Message: {this.state.prop.Proposal_Message}
+                Proposal_Message: {this.state.prop.Message}
                 </p>
 
                 <p>
